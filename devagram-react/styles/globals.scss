@@ -28,6 +28,22 @@ input {
  
 }
 
+.desktop{
+  display: block;
+
+  @media screen and (max-width: calc($desktopBreakpoint - 1px)) {
+    display: none;
+  }
+}
+
+.mobile{
+  display: block;
+
+  @media screen and (min-width: $desktopBreakpoint) {
+    display: none;
+  }
+}
+
 
 @import '../public/fonts/fonts.scss';
 @import '../components/botao/botao.scss';
