@@ -1,12 +1,22 @@
-import { useRef } from 'react'
+import { useEffect, useRef } from 'react'
 
 export function UploadImagem({
   className = '',
   setImagem,
   imagemPreview,
-  imagemPreviewClassName = ''
+  imagemPreviewClassName = '',
+  aoSetarAReferencia
 }) {
   const referenciaInput = useRef(null)
+
+  useEffect(() => {
+    if (!aoSetarAReferencia) {
+      return
+    }
+
+    aoSetarAReferencia(referenciaInput?.current)
+  }, [referenciaInput?.current])
+
   const abrirSeletorArquivos = () => {
     referenciaInput?.current?.click()
   }
@@ -18,7 +28,7 @@ export function UploadImagem({
 
     const arquivo = referenciaInput?.current?.files[0]
     const fileReader = new FileReader()
-    fileReader.readAsBinaryString(arquivo)
+    fileReader.readAsDataURL(arquivo)
     fileReader.onloadend = () => {
       setImagem({
         preview: fileReader.result,
@@ -32,7 +42,7 @@ export function UploadImagem({
       className={`uploadImagemContainer ${className}`}
       onClick={abrirSeletorArquivos}
     >
-      <button>Abrir seletor de arquivos</button>
+      
       {imagemPreview && (
         <div className="imagemPreviewContainer">
           <img
