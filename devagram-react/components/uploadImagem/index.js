@@ -1,6 +1,6 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
-export function UploadImagem({
+export default function UploadImagem({
   className = '',
   setImagem,
   imagemPreview,
@@ -8,6 +8,7 @@ export function UploadImagem({
   aoSetarAReferencia
 }) {
   const referenciaInput = useRef(null)
+  // const [imagem, setImagem] = useState("")
 
   useEffect(() => {
     if (!aoSetarAReferencia) {

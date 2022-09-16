@@ -13,6 +13,10 @@
     margin-bottom: 50px;
   }
 
+  .logoCadastro{
+    display: none;
+  }
+
   .conteudoPaginaPublica{
     width: 100%;
   }
@@ -43,7 +47,11 @@
     padding: 0 140px;
     font-size: 18px;
     margin-top: -30px;
-    
+
+    .logoCadastro{
+      display: block;
+    }
+
     .logoContainer{
       flex: 2;
       height: 40%;
