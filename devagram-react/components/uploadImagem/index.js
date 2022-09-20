@@ -8,7 +8,7 @@ export default function UploadImagem({
   aoSetarAReferencia
 }) {
   const referenciaInput = useRef(null)
-  // const [imagem, setImagem] = useState("")
+
 
   useEffect(() => {
     if (!aoSetarAReferencia) {
