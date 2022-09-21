@@ -57,12 +57,13 @@ export default function Cadastro() {
       }
 
       await usuarioService.cadastro(corpoReqCadastro)
-      await usuarioService.login({
-        login: email,
-        senha
-      })
+      // await usuarioService.login({
+      //   login: email,
+      //   senha
+      // })
 
-      router.push('/')
+      // router.push('/')
+      alert('Sucesso')
     } catch (error) {
       alert('Erro ao cadastrar usuario. ' + error?.response?.data?.erro)
     }
